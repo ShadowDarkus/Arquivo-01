@@ -1,0 +1,554 @@
+/* Estilos gerais, isso reseta todas as configuracoes padroes do site para que possamos aplicar estilos personalizados */
+* {
+    margin: 0; /*isso faz com que a margem toda do site seja zerada*/
+    padding: 0; /*isso faz com que o preenchimento do site seja zerado*/
+    box-sizing: border-box; /**/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*fonte de letra usada no site todo*/
+}
+
+/**/
+body {
+    background-color: #f9f9f9; /*cor de fundo do site*/
+    color: #333; /*cor normal do texto do site*/
+    line-height: 1.6; /* espacamento entre as linhas de texto*/
+}
+
+/*Isso se refere a todas as classes Containers em cada section.*/
+.container {
+    max-width: 1200px; /*isso define uma largura maxima do site*/
+    margin: 0 auto; /*altura automatica do site*/
+    padding: 0 20px; /*preenchimento interno dos container.*/
+}
+
+/* Cabeçalho e navegação */
+header {
+    background-color: #272626; /*cor de fundo do cabeçalho*/
+    color: white; /*cor de texto da navegação*/
+    padding: 20px 0; /*preenchimento interno da altura (height) do cabeçalho.*/
+    /*position: sticky; isso deixa o cabeçalho da header fixo, mesmo quando o usuário rola a página*/
+    top: 0;/*isso tem a ver com o "position: sticky", ou seja, quando o estiver em 0px o cabecalho ficará fixo no topo da viewport.*/
+    z-index: 100; /*ele está determinando que o cabeçalho deve "sobrepor" outros conteudos quando houver a rolagem na tela do site, quanto maior o seu valor, maior a sua prioridade.*/
+}
+
+/*Sobre a logo e o menu de navegacao*/
+nav {
+    display: flex; /*responde dinamicamente a diferentes tamanhos de tela alem de organizar elementos horizontalmente ou verticalmente com facilidade e distribuir espaço entre eles.*/
+    justify-content: space-between; /*espaco de margem entre os elementos da navegação (inicio, novidades, sobre, portifolio, contato) e a Logo.*/
+    align-items: center; /*centraliza os elementos da navegação e logo no centro da header.*/
+}
+
+/*Diretamente ligado ao logo*/
+.logo {
+    text-align: center;
+    background-color: #ecc309;
+    color: #333333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.tagline {
+    font-size: 16px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.initial {
+    color: #4CAF50;
+    font-size: 64px;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.2;
+}
+
+/*diretamente sobre todos os links de navegação*/
+.nav-links { 
+    display: flex; /**/
+    list-style: none; /*faz com que os "pontinhos" de lista não apareçam.*/
+} 
+
+/*diretamente sobre cada li em si*/
+.nav-links li {
+    margin-left: 30px; /*adiciona margem a esquerda de um elemento.*/
+}
+
+/*diretamente sobre cada link da navegação*/
+.nav-links a {
+    color: #ffff; /*cor do nome dos links da navegação*/
+    text-decoration: none; /*faz com que o link fique limpo, sem sublinhado ou cor padronizada.*/
+    font-weight: 500; /*grossura da fonte do link.*/
+    transition: all 0.3s ease; /*Suaviza a transisao da movimentacao */
+    position: relative; /*faz ajustes sutis no layout da Nav*/
+    padding: 5px 0; /*espaço entre o texto e a borda (azul) do link.*/
+}
+
+/*controla o efeito houver no nome do link*/
+.nav-links a:hover {
+    color: #ecc309; /*cor do link quando o mouse passa por cima.*/
+    transform: translateY(-3px); /*faz leves e pequenos deslocamentos verticais de elementos de forma suave e eficiente para cima */
+}
+
+/*controla o efeito da barra em baixo do link: (Criar um efeito de sublinhado que cresce ao passar o mouse, Adicionar um pequeno ícone após links, Criar separadores entre links*/
+.nav-links a::after {
+    content: '';/**/
+    position: absolute; /**/
+    bottom: -5px; /**/
+    left: 0; /**/
+    width: 0; /**/
+    height: 2px; /**/
+    background-color: #ecc309; /*cor do sublinhado*/
+    transition: width 0.3s; /*animacao suave do sublinhado (velocidade com que ele aparece)*/
+}
+
+/*se refere ao efeito de sublinhado que cresce ao passar o mouse em baixo do houver (link)*/
+.nav-links a:hover::after {
+    width: 100%; /*largura (tamanho da extensao) do sublinhado em baixo do link*/
+}
+
+/* Hero section */
+.hero {
+    height: 90vh; /*é uma unidade de medida CSS que define a altura de um elemento como 50% da altura total da janela de visualização (viewport),vh significa "viewport height" (altura da janela) .*/
+    display: flex; /**/
+    align-items: center; /*alinha os itens da section no centro.*/
+    position: relative; /*faz ajustes sutis*/
+    overflow: hidden;/*controla a visualizaçao do conteudo em um elemento com dimensoes limitadas.*/
+    background-image: url(../Arquivo-01/img/01.png); /*cor de fundo da hero section*/
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+    background-size: cover;
+    color: white; /*cor do texto da hero section*/
+}
+
+/*sobre o conteusdo da hero section*/
+.hero-content {
+    display: flex; /**/
+    align-items: center;/**/
+    justify-content: space-between; /**/
+    width: 100%; /**/
+} 
+/*texto da hero section*/
+.hero-text {
+    width: 50%; /**/
+    padding-right: 40px; /*preenchimento a direita da hero-text*/
+}
+/*titulo da section*/
+.hero-text h1 {
+    font-size: 3rem; /*tamanho da fonte do titulo*/
+    margin-bottom: 20px; /*margem inferior do titulo*/
+    line-height: 1.2;  /*altura do espacamento entre as linhas do titulo*/
+}
+
+/*Sobre o paragrafo em si*/
+.hero-text p {
+    font-size: 1.1rem; /*tamanho da fonte*/
+    margin-bottom: 30px; /*margem inferior do paragrafo*/
+    opacity: 0.9; /*opacidade do texto do paragrafo.*/
+}
+
+/*Referente ao botao de "entre em contato"*/
+.cta-button {
+    display: inline-block; /**/
+    background-color: #272626; /*cor de fundo do botao*/
+    color: #ecc309; /*texto dentro do botao*/
+    padding: 12px 30px; /*preenchimento de altura e largura do botao*/
+    text-decoration: none; /*limpa o link do botao, retirando o sublinhado e cor padrao*/
+    border-radius: 30px; /*borda curva do botao*/
+    font-weight: bold; /*engrossamento do texto do botao*/
+    transition: transform 0.3s, box-shadow 0.3s; /*animacao suave + sombra atras do boato*/
+}
+
+/*Referente ao hover do botao*/
+.cta-button:hover {
+    transform: translateY(-3px); /*faz com que o botao suba um pouco quando o mouse passa por cima*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /*cria a sombra do botao*/
+}
+
+/*Imagem da hero section*/
+.hero-image {
+    width: 40%; /**/;
+    display: flex; /**/
+    justify-content: center;
+    align-items: center; /**/
+}
+/*a imagem em si*/
+.hero-image img {
+    width: 100%; /* Ensures the image takes full width of its container */
+    max-width: 800px; /* Maintains a maximum width */
+    height: auto; /* Allows height to adjust proportionally */
+    border-radius: 50%;  
+    border: 5px solid white;  
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    aspect-ratio: 1 / 1; /* Maintains a square aspect ratio */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        text-align: center;
+    }
+
+    .hero-text, 
+    .hero-image {
+        width: 100%; /* Full width on smaller screens */
+        padding-right: 0; /* Remove right padding */
+    }
+
+    .hero-text {
+        margin-bottom: 30px; /* Add some space between text and image */
+    }
+
+    .hero-image img {
+        max-width: 400px; /* Reduce max-width on smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: auto; /* Allow height to adjust to content */
+        padding: 50px 0; /* Add some padding */
+    }
+
+    .hero-image img {
+        max-width: 300px; /* Further reduce image size on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-image img {
+        max-width: 250px; /* Smallest image size for very small screens */
+    }
+}
+
+/* Sobre section */
+.about {
+    padding: 80px 0; /*preenchimento interno de altura (height) */
+    background-color: white; /*cor de fundo da seção*/
+}
+
+/*titulo da section*/
+.section-title {
+    text-align: center; /**/
+    margin-bottom: 60px; /**/
+    position: relative; /**/
+    font-size: 2.2rem; /**/
+    color: #2c3e50; /**/
+}
+
+/*Aplica o sublinhado fixo em baixo do titulo da section*/
+.section-title::after {
+    content: ''; /**/
+    position: absolute; /**/
+    width: 100px; /*largura do sublinhado*/
+    height: 3px; /*grossura do subinhado*/
+    background-color: #ecc309; /*cor do sublinhado*/
+    bottom: -15px; /*margem superior (pois o -15 indica a reversao do sentido)  do sublinhado*/
+    left: 50%; /**/
+    transform: translateX(-50%);/**/
+}
+/**/
+.about-content {
+    display: flex; /**/
+    justify-content: space-between; /**/
+    align-items: center; /**/
+}
+/**/
+.about-text {
+    width: 60%; /*largura do texto.*/
+    padding-right: 100px; /*preenchimento a direita do texro */
+}
+/*sobre o titulo do texto*/
+.about-text h3 {
+    font-size: 1.5rem; /*tamanho do titulo*/
+    margin-bottom: 20px; /*margem inferior do titulo*/
+    color: #3498db; /*cor do titulo*/
+}
+/**/
+.about-text p {
+    margin-bottom: 20px; /*margem inferior de 20px para cada paragrafo*/
+}
+
+/**/
+.about-image {
+    width: 40%; /*largura da imagem*/
+}
+
+/*sobre o contorno da imagem em si*/
+.about-image img {
+    width: 100%; /*largura maxima da imagem*/
+    border-radius: 250px; /*faz a imagem ficar arredondada*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /**/
+    aspect-ratio: 1 / 1; /*faz a imagem ficar com bordas circular*/
+    object-fit: cover;/*garante que a imagem de adeque ao tamanho correto sem haver deformação*/
+}
+
+/* Habilidades section */
+.skills {
+    padding: 80px 0; /*Isso se refere ao preenchimento interno da coloracao do background da section que no caso é a cor: #f9f9f9.*/
+    background-color: #201d1d; /*Isso é a cor de fundo da section.*/
+}
+
+/*Isso se refere aos conteiners retangulares (brancos) que cobrem o texto interno (o conteudo um si)*/
+.skills-content {  
+    display: flex;  /*isso organiza os containers retangulares em colunas dispostos na posicao 3x3.*/
+    flex-wrap: wrap; /*Organiza os containers retangulares em suas posicoes.*/
+    justify-content: space-between; /* Coloca um espaço igualitario entre os containers retangulares.*/
+}
+
+/*Isso se refere ao box (como se fosse um container dentro de outro container) dentro dos containers retangulares*/
+.skill-box {
+    background-color: white; /*Cor dos containers retangulares*/
+    border-radius: 20px; /*formato da Borda do container retangular*/
+    padding: 30px; /*Preenchimento interno do container retangular*/
+    width: 30%; /*Largura do container retangular*/
+    margin-bottom: 40px; /*Se refere a mergem inferior (a baixo dos containers).*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.007); /*Isso se refere ao sombreamento do container retangular (atras do container/sensacao de destacamento 3D) (esse fica fixo o tempo todo).*/
+    transition: transform 0.3s, box-shadow 0.3s; /*Suaviza a transisao da movimentacao 3D do container retangular.*/
+}
+
+/*Cria o efeito houver nos cards de habilidades.*/
+.skill-box:hover {
+    transform: translateY(-10px);/*faz leves e pequenos deslocamentos verticais de elementos de forma suave e eficiente para cima*/
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.007); /*Cria uma sombra atras do container retangular quando o mouse passa em cima, (apenas aparece quando passado por cima o mouse).*/
+}
+
+/*Se refere aos icones dos boxs*/
+.skill-icon {
+    font-size: 2.5rem; /* Se refere ao tamanho de todos os icones de todos os cards.*/
+    margin-bottom: 20px; /*Margem inferior dos icones em relacao a distancia do texto em baixo.*/
+}
+
+/*Se refere ao titulo h2 dos boxs*/
+.skill-title {
+    font-size: 1.3rem; /*tamanho do titulo dos cards.*/
+    margin-bottom: 15px; /*margem inferior do titulo em relacao a distancia do texto em baixo.*/
+    color: #2c3e50; /*cor do titulo dos cards.*/
+}
+.skills .section-title {
+    color: #ffff;
+}
+
+/*Texto <p> dentro das Boxs*/
+.skill-box p {
+    color: #777; /*Cor do texto paragrafo (em todos os cards).*/
+}
+
+/* Contato section */
+.contact {
+    padding: 80px 0; /*Preenchimento interno da cor dentro da section class="contact"*/
+    background-color: #201d1d;  /*cor da section class="contact"*/
+    color: rgb(255, 255, 255);  /*cor do texto interno (nome ,email, assunto, mensagem) da section class="contact"*/
+}
+
+/*Se refere ao titulo da section class="contact" (precisamos por a class="contact" antes da class="section-title" para que o CSS estilize apenas esse titulo em especifico,
+ se nao ele nao entende de qual titulo estamos falando e estiliza todos os titulos que ele encontrar no nome daquela class.*/
+.contact .section-title {
+    color: rgb(255, 255, 255); /*cor do titulo da section class="contact"*/
+}
+
+/*Se refere aos parametros do formulario*/
+.contact-form {
+    max-width: 600px; /*isso cria um tamanho interno maximo para o formulario.*/
+    margin: 0 auto; /*isso cria um alinhamento centralizado automatico para o formulario.*/
+}
+
+/*Ele se refere aos nomes de label (Nome, Email, Assunto, Mensagem) do formulario*/
+.form-group {
+    margin-bottom: 25px; /*isso cria uma mergem inferior de distanciamento entre os nomes de Label.*/
+}
+
+/*Se refere a todas as Labels do formulario*/
+.form-group label {
+    display: block;/*faz uma quebra de linha para o texto de label.*/
+    margin-bottom: 10px; /*esse valor cria uma distancia entre o texto de label e o campo de texto.*/
+}
+
+/*Se referindo ao input de todos os form-group e a textarea ao mesmo tempo.*/
+.form-group input,
+.form-group textarea {
+    width: 100%; /*tamanho dos campos para escrever texto*/
+    padding: 15px; /*preenchimento interno dos campos de texto*/
+    border: 2px white solid;/*Isso se refere aos 3 tipos de border ao mesmo tempo: (width = janela /color = cor /style = tipo de borda).*/
+    border-radius: 5px; /*contorno da borda dos campos de texto*/
+    background-color: rgba(255, 255, 255, 0.1); /*cor interna dos campos de texto*/
+    color: rgb(255, 255, 255); /*cor do texto escrito dentro da caixa de texto*/
+    font-size: 1rem; /*literalmente é o tamanho da letra/fonte usada.*/
+}
+
+/*Isso se refere apenas a textarea, diferente do codigo a cima. Entao apenas essa campo será alterado.*/
+.form-group textarea {
+    height: 150px; /*altura do campo da textarea*/
+}
+
+/*Isso se refere aos inputs + textarea ao mesmo tempo e faz com que eles sejam focados (aumenta ligeiramente a opacidade interna quando o usuario clicar neles).*/
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none; /*cria uma borda automatica de fundo nos inputs. No momento nenhuma esta sendo usada.*/
+    background-color: rgba(255, 255, 255, 0.2); /*tom da cor da opacidade*/
+}
+
+/*Botao de enviar do formulario*/
+.submit-btn {
+    background-color: #3498db; /* cor de fundo do botao*/
+    color: white; /*cor do texto interno*/
+    border: none; /*sem nenhuma borda ao redor do botao*/
+    padding: 15px 30px; /*altura e largura do botao*/
+    border-radius: 30px; /*contorno da borda do botao*/
+    font-size: 1rem; /*tamanho da fonte do texto do botao*/
+    cursor: pointer;/*muda o estilo de "seta" do mouse para uma "maozinha" quando o usuario passa o mouse sobre o botao.*/
+    transition: background-color 0.3s; /*suaviza a transição de cor do botao ao clicar nele.*/
+}
+
+/*efeito houver no botao*/
+.submit-btn:hover {
+    background-color: #2980b9; /*efeito de houver (no caso mudanca de cor do botao) ao passar o mouse sobre o botao*/
+}
+
+/* Updated Footer Styles */
+footer {
+    background-color: #0B1324;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.footer-column:last-child {
+    margin-right: 0;
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #8C97AD;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    color: #B0B8C5;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input {
+    width: 100%;
+    background-color: #172645;
+    border: none;
+    color: white;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    width: 100%;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #2980B9;
+}
+
+.country-selector select {
+    width: 100%;
+    background-color: #172645;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.footer-links {
+    margin-top: 20px;
+    color: #8C97AD;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: #8C97AD;
+    text-decoration: none;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #B0B8C5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #3498DB;
+}
+
+.footer-bottom {
+    border-top: 1px solid #172645;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #8C97AD;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #8C97AD;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #3498DB;
+}
