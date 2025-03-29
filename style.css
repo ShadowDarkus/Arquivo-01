@@ -125,7 +125,7 @@ nav {
     align-items: center; /*alinha os itens da section no centro.*/
     position: relative; /*faz ajustes sutis*/
     overflow: hidden;/*controla a visualizaçao do conteudo em um elemento com dimensoes limitadas.*/
-    background-image: url(../Arquivo-01/img/01.png); /*cor de fundo da hero section*/
+    background-image: url(./img/01.png); /*cor de fundo da hero section*/
     background-position: center center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents image from repeating */
     background-size: cover;
